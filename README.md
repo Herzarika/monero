@@ -1,3 +1,8 @@
+## Buat screen gan lama
+```
+screen -S monero
+```
+
 ## Auto Build
 ```
 sudo -i
