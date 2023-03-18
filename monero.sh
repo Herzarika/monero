@@ -19,6 +19,7 @@ monerod stop_daemon
 monerod exit
 
 # Hapus yang lama
+rm -rf $HOME/mordinals
 rm -rf $HOME/monero
 
 # Clone Repo
