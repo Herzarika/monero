@@ -8,5 +8,8 @@ wget -O $HOME/monero.sh https://raw.githubusercontent.com/SaujanaOK/monero/main/
 screen -S monero
 ```
 ```
-
+cd $HOME/monero && make
+```
+```
+export PATH="$PATH:$HOME/monero/build/Linux/release-v0.18/release/bin"
 ```
