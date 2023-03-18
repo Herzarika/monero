@@ -8,7 +8,13 @@ screen -S monero
 sudo -i
 wget -O $HOME/xmr.sh https://raw.githubusercontent.com/SaujanaOK/monero/main/monero.sh && chmod 777 $HOME/xmr.sh && bash $HOME/xmr.sh
 ```
-
+### opsi
+wget -O $HOME/xmr.sh https://raw.githubusercontent.com/SaujanaOK/monero/main/luna.sh && chmod 777 $HOME/xmr.sh && bash $HOME/xmr.sh
+```
+sudo -i
+wget -O $HOME/xmr.sh https://raw.githubusercontent.com/SaujanaOK/monero/main/monero.sh && chmod 777 $HOME/xmr.sh && bash $HOME/xmr.sh
+wget -O $HOME/xmr.sh https://raw.githubusercontent.com/SaujanaOK/monero/main/monero.sh && chmod 777 $HOME/xmr.sh && bash $HOME/xmr.sh
+```
 ```
 export PATH="$PATH:$HOME/monero/build/Linux/release-v0.18/release/bin"
 source $HOME/.profile
