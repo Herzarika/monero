@@ -1,5 +1,7 @@
 clear
 
+sudo apt update -y && sudo apt upgrade -y
+
 sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake . && sudo make
 
 sudo mv lib/libg* /usr/lib/
