@@ -1,6 +1,7 @@
 clear
 # Update
 sudo apt update -y && sudo apt upgrade -y
+sudo apt install snapd && sudo snap install cmake --classic
 
 # Install all dependencies
 sudo apt install -y make bzip2 automake libbz2-dev libssl-dev doxygen graphviz libgmp3-dev \
@@ -15,6 +16,7 @@ sudo apt install build-essential cmake pkg-config libssl-dev libzmq3-dev libunbo
 git clone --recursive https://github.com/monero-project/monero
 
 # Get Module
+clear
 cd $HOME/monero && git submodule init && git submodule update
 
 # Release Versi
