@@ -28,3 +28,4 @@ cd $HOME/monero && make
 
 # export PATH
 export PATH="$PATH:$HOME/monero/build/Linux/release-v0.18/release/bin"
+source $HOME/.profile
