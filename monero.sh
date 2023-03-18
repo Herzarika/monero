@@ -29,5 +29,3 @@ cd $HOME/mordinals && make
 export PATH="$PATH:$HOME/mordinals/build/release/bin"
 source $HOME/.profile
 
-# Update again
-apt-get update && apt-get upgrade
