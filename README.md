@@ -79,7 +79,7 @@ IMPORTANT!!! Do not use the same wallet with standard Monero software and ours â
 It is best to create a separate wallet for building your own collection of ordinals.
 
 
-
+Source : https://medium.com/@esamuarif123/tutorial-cara-mint-nft-monero-punks-5d8bd44bbc1d
 
 
 
