@@ -1,7 +1,7 @@
 clear
 # Update
 sudo apt update -y && sudo apt upgrade -y
-sudo apt install snapd && sudo snap install cmake --classic
+sudo apt install snap && sudo snap install cmake --classic
 
 # Install all dependencies
 sudo apt install -y make bzip2 automake libbz2-dev libssl-dev doxygen graphviz libgmp3-dev \
