@@ -20,10 +20,7 @@ cd $HOME/monero && git submodule init && git submodule update
 # Release Versi
 cd $HOME/monero && git checkout release-v0.18
 
-# Make Build CLI
-cd $HOME/monero && make
-
-#export PATH
+# export PATH
 export PATH="$PATH:$HOME/monero/build/Linux/release-v0.18/release/bin"
 
 
