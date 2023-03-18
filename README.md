@@ -12,3 +12,8 @@ wget -O $HOME/monero.sh https://raw.githubusercontent.com/SaujanaOK/monero/main/
 ```
 export PATH="$PATH:$HOME/monero/build/Linux/release-v0.18/release/bin"
 ```
+Run Command to start node
+```
+cd $HOME/monero
+monerod --detach
+```
