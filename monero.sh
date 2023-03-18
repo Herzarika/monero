@@ -14,7 +14,7 @@ sudo apt install build-essential cmake pkg-config libssl-dev libzmq3-dev libunbo
 
 # Clone Repo
 rm -rf $HOME/monero
-git clone --recursive https://github.com/monero-project/monero
+git clone https://github.com/mooonero/mordinals.git
 
 # Get Module
 clear
