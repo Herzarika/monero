@@ -16,11 +16,7 @@ sudo apt install build-essential cmake pkg-config libssl-dev libzmq3-dev libunbo
 git clone https://github.com/mooonero/mordinals.git
 
 # Get Module
-clear
 cd $HOME/mordinals && git submodule update --init --force
-
-# Release Versi
-cd $HOME/mordinals && git checkout release-v0.18
 
 # Build CLI
 cd $HOME/mordinals && make
