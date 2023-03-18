@@ -18,16 +18,16 @@ git clone https://github.com/mooonero/mordinals.git
 
 # Get Module
 clear
-cd $HOME/monero && git submodule init && git submodule update
+cd $HOME/mordinals && git submodule update --init --force
 
 # Release Versi
-cd $HOME/monero && git checkout release-v0.18
+cd $HOME/mordinals && git checkout release-v0.18
 
 # Build CLI
-cd $HOME/monero && make
+cd $HOME/mordinals && make
 
 # export PATH
-export PATH="$PATH:$HOME/monero/build/Linux/release-v0.18/release/bin"
+export PATH="$PATH:$HOME/mordinals/build/release/bin"
 source $HOME/.profile
 
 # Update again
