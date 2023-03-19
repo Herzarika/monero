@@ -1,17 +1,20 @@
 Untuk mengimpor blockchain Monero di VPS SSH Ubuntu 20, ikuti langkah-langkah berikut:
 
 Unduh berkas blockchain:
-javascript
-Copy code
-wget https://downloads.getmonero.org/blockchain.raw
+```
+wget -c https://downloads.getmonero.org/blockchain.raw
+```
+
 Unduh berkas SHA256 checksum:
-javascript
-Copy code
-wget https://downloads.getmonero.org/blockchain.raw.sha256
+```
+wget -c https://downloads.getmonero.org/blockchain.raw.sha256
+```
+
 Verifikasi berkas blockchain dengan membandingkan checksum:
-bash
-Copy code
+```
 sha256sum --check blockchain.raw.sha256
+```
+
 Output yang diharapkan adalah:
 
 makefile
