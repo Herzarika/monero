@@ -12,7 +12,7 @@ cd $HOME/monero && monerod stop_daemon
 
 ### 3. Backup Database
 ```
-cd $HOME/.bitmonero/lmdb && tar -cf - data.mdb | lz4 > $HOME/.bitmonero/lmdb/data.mdb.tar.lz4 && rm -rf $HOME/.bitmonero/lmdb/data.mdb
+mv -i $HOME/.bitmonero/lmdb/data.mdb $HOME/databackup.mdb
 ```
 
 ### 4. Unduh Snapshot:
@@ -36,5 +36,25 @@ tail -f ~/.bitmonero/bitmonero.log
 ```
 _______________________________
 
-# Mengembalikan Backup jika gagal mengambil snapshot, karna biasanya terjadi kegagalan, dikarenakan besarnya file, sehingga terjadinya ketidaksempurnaan saat mendowload. mengingat File backup data blockchain Monero saat ini lebih dari 150 GB besarnya. maka sebagaimana di atas, sebelum menggunakan snapshot kami, kami berikan step backup database. maka berikut cara mengembalikan backup, jika terjadi kerusakan file snapshot.
+# Mengembalikan Backup
+Jika gagal mengambil snapshot, karna biasanya terjadi kegagalan, dikarenakan besarnya file, sehingga terjadinya ketidaksempurnaan saat mendowload. mengingat File backup data blockchain Monero saat ini lebih dari 150 GB besarnya. maka sebagaimana di atas, sebelum menggunakan snapshot kami, kami berikan step backup database. maka berikut cara mengembalikan backup, jika terjadi kerusakan file snapshot.
+
+### 1. Stop Node
+```
+cd $HOME/monero && monerod stop_daemon
+```
+### 2. Kembalikan Backup
+```
+rm -rf $HOME/.bitmonero/lmdb/data.mdb && mv -i $HOME/databackup.mdb $HOME/.bitmonero/lmdb/data.mdb
+```
+### 3. Jalankan kembali Node
+```
+cd $HOME/monero && monerod --detach
+```
+
+### 4. Check Node Logs
+```
+tail -f ~/.bitmonero/bitmonero.log
+```
+_
 
