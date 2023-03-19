@@ -1,3 +1,4 @@
+_______________________________
 # Monero Snapshot
 Untuk mengimpor blockchain Monero di VPS SSH Ubuntu 20, ikuti langkah-langkah berikut:
 ### 1. Menyimpan PATH
@@ -56,5 +57,5 @@ cd $HOME/monero && monerod --detach
 ```
 tail -f ~/.bitmonero/bitmonero.log
 ```
-_
+_______________________________
 
