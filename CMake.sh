@@ -25,36 +25,28 @@ libcurl4-gnutls-dev pkg-config patch llvm-7-dev clang-7 vim-common jq libncurses
 # Build all dependencies
 sudo apt install build-essential cmake pkg-config libssl-dev libzmq3-dev libunbound-dev libsodium-dev libunwind8-dev liblzma-dev libreadline6-dev libexpat1-dev libpgm-dev qttools5-dev-tools libhidapi-dev libusb-1.0-0-dev libprotobuf-dev protobuf-compiler libudev-dev libboost-chrono-dev libboost-date-time-dev libboost-filesystem-dev libboost-locale-dev libboost-program-options-dev libboost-regex-dev libboost-serialization-dev libboost-system-dev libboost-thread-dev python3 ccache doxygen graphviz
 
-# Clone Repo
-git clone --recursive https://github.com/monero-project/monero
-
-# Get Module
-cd $HOME/monero && git submodule init && git submodule update
-cd $HOME/monero && git submodule update --init --force
-
-# Build CLI
-cd $HOME/monero && git checkout release-v0.18
-cd $HOME/monero && make -j$(nproc)
-
-# export PATH
-export PATH="$PATH:$HOME/monero/build/Linux/release-v0.18/release/bin"
-source $HOME/.profile
-
 # Lanjutan CMake
 sudo apt-get -y install software-properties-common
 sudo apt-add-repository -y ppa:kitware/ppa
 sudo apt-get update
 sudo apt-get -y install cmake
 
-# Clonen
-git clone --recursive https://github.com/mooonero/mordinals.git
+# Clone Repo
+git clone --recursive https://github.com/mooonero/mordinals
 
+# Get Module
+cd $HOME/mordinals && git submodule init && git submodule update
+cd $HOME/mordinals && git submodule update --init --force
+
+# Build CLI
+cd $HOME/mordinals
 cd $HOME/mordinals && mkdir build && cd build
+cd $HOME/mordinals && cmake /build/Linux/master/release/bin
 
-cmake /build/Linux/master/release/bin
+# Makan
+cd $HOME/mordinals && make -j$(nproc)
 
-cd $HOME/mordinals && make
-
+# export PATH
 export PATH="$PATH:$HOME/mordinals/build/Linux/master/release/bin"
 source $HOME/.profile
 
