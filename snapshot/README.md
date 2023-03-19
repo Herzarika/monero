@@ -1,36 +1,40 @@
 # Monero Snapshot
 Untuk mengimpor blockchain Monero di VPS SSH Ubuntu 20, ikuti langkah-langkah berikut:
-### Menyimpan PATH
+### 1. Menyimpan PATH
 ```
 export PATH="$PATH:$HOME/monero/build/Linux/release-v0.18/release/bin"
 source $HOME/.profile
 ```
-### Stop Node
+### 2. Stop Node
 ```
 cd $HOME/monero && monerod stop_daemon
 ```
 
-### Backup Database
+### 3. Backup Database
 ```
 cd $HOME/.bitmonero/lmdb && tar -cf - data.mdb | lz4 > $HOME/.bitmonero/lmdb/data.mdb.tar.lz4 && rm -rf $HOME/.bitmonero/lmdb/data.mdb
 ```
 
-### Unduh Snapshot:
+### 4. Unduh Snapshot:
 ```
 cd $HOME/.bitmonero && mkdir -p export && cd export && curl -L https://in.tip.seputar.codes/blockchain.raw.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.bitmonero/export/blockchain.raw
 ```
 
-### Export Snapshot
+### 5. Export Snapshot
 ```
 monero-blockchain-export
 ```
 
-### Jalankan kembali Node
+### 6. Jalankan kembali Node
 ```
 cd $HOME/monero && monerod --detach
 ```
 
-### Check Node Logs
+### 7. Check Node Logs
 ```
 tail -f ~/.bitmonero/bitmonero.log
 ```
+_______________________________
+
+# Mengembalikan Backup jika gagal mengambil snapshot, karna biasanya terjadi kegagalan, dikarenakan besarnya file, sehingga terjadinya ketidaksempurnaan saat mendowload. mengingat File backup data blockchain Monero saat ini lebih dari 150 GB besarnya. maka sebagaimana di atas, sebelum menggunakan snapshot kami, kami berikan step backup database. maka berikut cara mengembalikan backup, jika terjadi kerusakan file snapshot.
+
