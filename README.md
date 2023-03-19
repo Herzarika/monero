@@ -10,7 +10,7 @@ wget -O $HOME/xmr.sh https://raw.githubusercontent.com/SaujanaOK/monero/main/mon
 ```
 
 ```
-export PATH="$PATH:$HOME/monero/build/release/bin"
+export PATH="$PATH:$HOME/monero/build/Linux/release-v0.18/release/bin"
 source $HOME/.profile
 ```
 ## Run Command to start node
