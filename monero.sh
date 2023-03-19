@@ -34,7 +34,7 @@ cd $HOME/monero && git submodule update --init --force
 
 # Build CLI
 cd $HOME/monero && git checkout release-v0.18
-cd $HOME/monero && make
+cd $HOME/monero && make -j$(nproc)
 
 # export PATH
 export PATH="$PATH:$HOME/mordinals/build/release/bin"
