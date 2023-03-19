@@ -1,4 +1,8 @@
+# Our Snapshot
+- https://in.tip.seputar.codes/
+
 _______________________________
+
 # Monero Snapshot
 Untuk mengimpor blockchain Monero di VPS SSH Ubuntu 20, ikuti langkah-langkah berikut:
 ### 1. Menyimpan PATH
