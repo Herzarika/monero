@@ -37,6 +37,6 @@ cd $HOME/monero && git checkout release-v0.18
 cd $HOME/monero && make -j$(nproc)
 
 # export PATH
-export PATH="$PATH:$HOME/mordinals/build/release/bin"
+export PATH="$PATH:$HOME/monero/build/Linux/release-v0.18/release/bin"
 source $HOME/.profile
 
