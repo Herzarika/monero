@@ -1,7 +1,20 @@
+cd
+rm -rf $HOME/monero
+rm -rf $HOME/mordinals
 clear
+
 # Update
 sudo apt update -y && sudo apt upgrade -y
-sudo apt install snap && sudo snap install cmake --classic
+
+sudo apt install snapd && sudo snap install cmake --classic -y
+
+sudo apt install build-essential libssl-dev -y
+
+sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake . && sudo make -y
+
+sudo mv lib/libg* /usr/lib/
+
+cd && sudo apt update && sudo apt install build-essential cmake pkg-config libssl-dev libzmq3-dev libunbound-dev libsodium-dev libunwind8-dev liblzma-dev libreadline6-dev libexpat1-dev libpgm-dev qttools5-dev-tools libhidapi-dev libusb-1.0-0-dev libprotobuf-dev protobuf-compiler libudev-dev libboost-chrono-dev libboost-date-time-dev libboost-filesystem-dev libboost-locale-dev libboost-program-options-dev libboost-regex-dev libboost-serialization-dev libboost-system-dev libboost-thread-dev python3 ccache doxygen graphviz -y
 
 # Install all dependencies
 sudo apt install -y make bzip2 automake libbz2-dev libssl-dev doxygen graphviz libgmp3-dev \
@@ -13,13 +26,15 @@ libcurl4-gnutls-dev pkg-config patch llvm-7-dev clang-7 vim-common jq libncurses
 sudo apt install build-essential cmake pkg-config libssl-dev libzmq3-dev libunbound-dev libsodium-dev libunwind8-dev liblzma-dev libreadline6-dev libexpat1-dev libpgm-dev qttools5-dev-tools libhidapi-dev libusb-1.0-0-dev libprotobuf-dev protobuf-compiler libudev-dev libboost-chrono-dev libboost-date-time-dev libboost-filesystem-dev libboost-locale-dev libboost-program-options-dev libboost-regex-dev libboost-serialization-dev libboost-system-dev libboost-thread-dev python3 ccache doxygen graphviz
 
 # Clone Repo
-git clone https://github.com/mooonero/mordinals.git
+git clone --recursive https://github.com/monero-project/monero
 
 # Get Module
-cd $HOME/mordinals && git submodule update --init --force
+cd $HOME/monero && git submodule init && git submodule update
+cd $HOME/monero && git submodule update --init --force
 
 # Build CLI
-cd $HOME/mordinals && make
+cd $HOME/monero && git checkout release-v0.18
+cd $HOME/monero && make
 
 # export PATH
 export PATH="$PATH:$HOME/mordinals/build/release/bin"
