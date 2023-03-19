@@ -6,11 +6,11 @@ clear
 # Update
 sudo apt update -y && sudo apt upgrade -y
 
-sudo apt install snapd && sudo snap install cmake --classic -y
+sudo apt install snapd -y && sudo snap install cmake --classic -y
 
 sudo apt install build-essential libssl-dev -y
 
-sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake . && sudo make -y
+sudo apt-get install libgtest-dev -y && cd /usr/src/gtest && sudo cmake . && sudo make -y
 
 sudo mv lib/libg* /usr/lib/
 
