@@ -71,21 +71,17 @@ kalian bisa kosongin juga gpp
 ###  MINT NFT MONERO PUNKS
 Launch simplewallet and pass the following command to it:
 ```
-[wallet 31yfs3]: mint_ordinal 0.00001 /home/images/my_inscription.png /home/description.txt
+mint_ordinal 0.00001 /home/images/my_inscription.png /home/description.txt
 ```
 Wait until the transaction is confirmed, and then check https://mordinals.org to see if your inscription has been recognized and registered.
 
-9. Bask in the glory of being inscribed in Monero’s history!
-
-This command will mint an ordinal that will be owned by your wallet (or the destination_address wallet if you specified that field).
-
-IMPORTANT!!! Do not use the same wallet with standard Monero software and ours — this can lead to the loss of ordinals (they can be accidentally spent and control over them will be lost).
-
-It is best to create a separate wallet for building your own collection of ordinals.
-
-
-Source : https://medium.com/@esamuarif123/tutorial-cara-mint-nft-monero-punks-5d8bd44bbc1d
-
+Command lain
+```
+mint_ordinal /root/file.png /root/file.txt AddressMoneroMu
+```
+Source : 
+- https://medium.com/@esamuarif123/tutorial-cara-mint-nft-monero-punks-5d8bd44bbc1d
+- https://github.com/Megumiiiiii/monero-punk
 
 
 
