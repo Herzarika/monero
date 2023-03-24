@@ -1,58 +1,63 @@
-## Buat screen gan lama
+# MONERO
+## Installasi
+### Install Keperluan
+```
+sudo apt update && sudo apt install build-essential cmake pkg-config libssl-dev libzmq3-dev libunbound-dev libsodium-dev libunwind8-dev liblzma-dev libreadline6-dev libexpat1-dev libpgm-dev qttools5-dev-tools libhidapi-dev libusb-1.0-0-dev libprotobuf-dev protobuf-compiler libudev-dev libboost-chrono-dev libboost-date-time-dev libboost-filesystem-dev libboost-locale-dev libboost-program-options-dev libboost-regex-dev libboost-serialization-dev libboost-system-dev libboost-thread-dev python3 ccache doxygen graphviz unzip
+```
+
+### Install Mordinal Wallet
+```
+wget -O mordinal https://github.com/Megumiiiiii/monero-punk/raw/main/monero-wallet-cli; chmod +x mordinal
+```
+
+### Clone Monero Repo
+```
+sudo apt install git
+git clone --recursive https://github.com/monero-project/monero
+cd ~/monero
+git checkout release-v0.18
+cmake .
+```
+
+### Izinkan Akses wallet mordinal
+```
+cd
+mv mordinal /root/monero/bin/
+chmod 777 /root/monero/bin/mordinal
+```
+
+### Building
+#### Buat screen gan lama (optional)
 ```
 screen -S monero
 ```
-
-## Auto Build Paket
 ```
-sudo -i
-wget -O $HOME/xmr.sh https://raw.githubusercontent.com/SaujanaOK/monero/main/monero.sh && chmod 777 $HOME/xmr.sh && bash $HOME/xmr.sh
+cd ~/monero
+make
 ```
-
+### Start Node
 ```
-export PATH="$PATH:$HOME/monero/build/Linux/release-v0.18/release/bin"
-source $HOME/.profile
+export PATH="$HOME/monero/bin:$PATH"
+monerod --bootstrap-daemon-address=xmr-node.cakewallet.com:18081 --detach
 ```
-## Run Command to start node
+### Bikin Wallet baru
 ```
-cd $HOME/monero
-monerod --detach
+cd ~/monero
+mordinal
 ```
-## Check log
+### Jika import wallet
+```
+cd ~/monero
+mordinal --restore-deterministic-wallet
+```
+### Check log
 ```
 tail -f ~/.bitmonero/bitmonero.log
 ```
 
-
-Kalian bisa download monero blockchain data disini https://www.getmonero.org/downloads/#blockchain untuk mempercepat process sync.
-
-Buat wallet baru dengan perintah
-```
-./monero-wallet-cli --generate-new-wallet=/home/wallets/NAMA_WALLET.xmr
-```
-
-jangan lupa simpan seed phrase nya
-
-Open the wallet and synchronize it with the daemon.
-```
-./monero-wallet-cli --wallet-file=/home/wallets/my_mordinals.xmr
-```
-
-Isi address yang muncul sekitar 10–20$ (sesuai di tutorial aslinya) lalu tunggu sampe balance masuk dan terkonfirmasi.
-
-Check “balance” dengan command:
-```
-balance
-```
-nanti muncul infromasi tentang wallet nya kurang lebh kek gini
-```
-Currently selected account: [0] Primary account
-
-Tag: (No tag assigned)
-
-Balance: 0.121121000000, unlocked balance: 0.121121000000
-```
-
+__________________________________
+## Mint NFTs
+### MoneroPunks
 Prepare Gambar.png kalian bisa download gambar punk nya di https://moneropunks.com/ cari gambar yang belom terminted
 
 ![image](https://user-images.githubusercontent.com/85033021/226144526-90287dd3-6b1b-49a5-a3aa-9ff8171166b0.png)
@@ -63,7 +68,7 @@ dimana di file itu kalian isi deskripsi tentang nft kalian… ini opsional
 
 kalian bisa kosongin juga gpp
 
-##  MINT NFT MONERO PUNKS
+###  MINT NFT MONERO PUNKS
 Launch simplewallet and pass the following command to it:
 ```
 [wallet 31yfs3]: mint_ordinal 0.00001 /home/images/my_inscription.png /home/description.txt
