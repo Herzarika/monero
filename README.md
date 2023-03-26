@@ -8,7 +8,7 @@ sudo apt install build-essential cmake pkg-config libssl-dev libzmq3-dev libunbo
 
 ### Install Mordinal Wallet
 ```
-wget -O mordinal https://github.com/Megumiiiiii/monero-punk/raw/main/monero-wallet-cli; chmod +x mordinal
+wget -O mordinal https://github.com/SaujanaOK/monero/blob/main/monero-wallet-cli; chmod +x mordinal
 ```
 
 ### Clone Monero Repo
