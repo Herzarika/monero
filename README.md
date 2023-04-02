@@ -43,11 +43,13 @@ monerod --bootstrap-daemon-address=xmr-node.cakewallet.com:18081 --detach
 ```
 ### Bikin Wallet baru
 ```
+export PATH="$HOME/monero/bin:$PATH"
 cd ~/monero
 mordinal
 ```
 ### Jika import wallet
 ```
+export PATH="$HOME/monero/bin:$PATH"
 cd ~/monero
 mordinal --restore-deterministic-wallet
 ```
