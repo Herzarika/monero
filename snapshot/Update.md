@@ -44,4 +44,6 @@ Pastikan masuk wallet dan jalankan command berikut :
 list_my_inscriptions
 ```
 ## Untuk Transfer NFTs
-menyusul
+```
+transfer_inscription <Hash_NFT> <Wallet_Tujuan> /root/metadata.txt
+```
